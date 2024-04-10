@@ -559,3 +559,32 @@ export const STANDARD_AGGREGATIONS = new Set([
   "max",
   "median",
 ]);
+
+// "popular" expressions to suggest initially.
+export const POPULAR_EXPRESSIONS = new Set([
+  // Functions, taken from:
+  // - https://stats.metabase.com/question/16893-custom-expression-functions-usage-custom-column
+  "case",
+  "concat",
+  "contains",
+  "between",
+  "coalesce",
+  "now",
+  "replace",
+  "interval",
+  "substring",
+  "lower",
+
+  // Aggregations, taken from:
+  // - https://stats.metabase.com/question/16985-custom-expression-functions-usage-aggregation
+  "count",
+  "distinct",
+  "count-where",
+  "sum",
+  "avg",
+  "percentile",
+  "share",
+  "sum-where",
+  "min",
+  "median",
+]);
