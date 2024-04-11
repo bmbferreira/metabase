@@ -556,6 +556,13 @@ AreaStackedAutoDataLabels.args = {
   renderingContext,
 };
 
+export const BarMinHeightLimit = Template.bind({});
+BarMinHeightLimit.args = {
+  rawSeries: data.barMinHeightLimit as any,
+  dashcardSettings: {},
+  renderingContext,
+};
+
 export const Default = Template.bind({});
 Default.args = {
   rawSeries: data.messedUpAxis as any,

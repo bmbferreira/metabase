@@ -275,6 +275,7 @@ const buildEChartsBarSeries = (
     type: "bar",
     z: CHART_STYLE.series.zIndex,
     yAxisIndex,
+    barMinHeight: 1,
     barGap: 0,
     stack: stackName,
     barWidth: computeBarWidth(
