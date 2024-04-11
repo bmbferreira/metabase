@@ -37,6 +37,7 @@ import {
   getDefaultLegendIsReversed,
   getDefaultShowDataLabels,
   getDefaultDataLabelsFrequency,
+  getDefaultIsAutoSplitEnabled,
   STACKABLE_DISPLAY_TYPES,
 } from "metabase/visualizations/shared/settings/cartesian-chart";
 import {
@@ -567,7 +568,7 @@ export const GRAPH_AXIS_SETTINGS = {
     title: t`Split y-axis when necessary`,
     widget: "toggle",
     inline: true,
-    default: true,
+    getDefault: getDefaultIsAutoSplitEnabled,
     getHidden: series => series.length < 2,
   },
   "graph.x_axis.labels_enabled": {
