@@ -28,6 +28,7 @@
   #{:model/ApiKey
     :model/CacheConfig
     :model/CardFavorite
+    :model/CloudMigration
     :model/DashboardFavorite
     :model/Query
     :model/QueryCache

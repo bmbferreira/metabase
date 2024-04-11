@@ -6137,6 +6137,64 @@ databaseChangeLog:
         - customChange:
             class: "metabase.db.custom_migrations.BackfillQueryField"
 
+  - changeSet:
+      id: v50.2024-04-12T16:00:00
+      author: filipesilva
+      comment: Create cloud migration
+      changes:
+        - createTable:
+            tableName: cloud_migration
+            remarks: Migrate to cloud directly from Metabase
+            columns:
+              - column:
+                  name: id
+                  remarks: Unique ID
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: external_id
+                  remarks: Matching ID in Cloud for this migration
+                  type: ${text.type}
+                  constraints:
+                    nullable: false
+              - column:
+                  name: upload_url
+                  remarks: URL where the backup will be uploaded to
+                  type: ${text.type}
+                  constraints:
+                    nullable: false
+              - column:
+                  name: state
+                  remarks: 'Current state of the migration: init, setup, dump, upload, done, error, cancelled'
+                  type: ${text.type}
+                  defaultValue: init
+                  constraints:
+                    nullable: false
+              - column:
+                  name: progress
+                  remarks: Number between 0 to 100 representing progress as a percentage
+                  type: int
+                  defaultValue: 0
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  remarks: Timestamp when the config was inserted
+                  type: ${timestamp_type}
+                  defaultValueComputed: current_timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  remarks: Timestamp when the config was updated
+                  type: ${timestamp_type}
+                  defaultValueComputed: current_timestamp
+                  constraints:
+                    nullable: false
+
   # >>>>>>>>>> DO NOT ADD NEW MIGRATIONS BELOW THIS LINE! ADD THEM ABOVE <<<<<<<<<<
 
 ########################################################################################################################

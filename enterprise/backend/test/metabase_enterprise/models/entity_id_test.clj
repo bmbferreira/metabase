@@ -75,7 +75,8 @@
     :model/User
     :model/ViewLog
     :model/GroupTableAccessPolicy
-    :model/ConnectionImpersonation})
+    :model/ConnectionImpersonation
+    :model/CloudMigration})
 
 (deftest ^:parallel comprehensive-entity-id-test
   (doseq [model (->> (v2.entity-ids/toucan-models)
