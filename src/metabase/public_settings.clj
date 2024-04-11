@@ -846,3 +846,9 @@
                   (if-not (pos-int? value)
                     20
                     value))))
+
+(defsetting sql-parsing-disabled
+  (deferred-tru "SQL Parsing is disabled")
+  :visibility :internal
+  :export?    false
+  :type       :boolean)
